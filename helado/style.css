@@ -1,0 +1,70 @@
+:root {
+  --fondo: #27374D;
+  --sabor-fresa: #FF78C4;
+  --palo: #C38154;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.contenedor {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--fondo);
+}
+.circulo {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: .3;
+  box-shadow: 2px 2px 10px 2px #fff;
+}
+.helado {
+  position: relative;
+  animation: movimiento 2s infinite;
+}
+.helado > .sabor {
+  width: 150px;
+  height: 200px;
+  background-color: var(--sabor-fresa);
+  border-radius: 70px 70px 20px 20px;
+  position: relative;
+}
+.helado > .sabor::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  width: 12%;
+  height: 70%;
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 5px;
+}
+.helado > .palo {
+  width: 50px;
+  height: 100px;
+  background-color: var(--palo);
+  margin: 0 auto;
+  border-radius: 0 0 1rem 1rem;
+}
+.helado > .palo:after {
+  content: "";
+  width: inherit;
+  height: 20px;
+  background-color: rgba(0, 0, 0, .3);
+  position: absolute;
+}
+@keyframes movimiento {
+  0%, 100% {
+    top: -20px;
+  }
+  70% {
+    top: 10px;
+  }
+}
